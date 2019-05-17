@@ -1,0 +1,30 @@
+The github-services application uses Spring Boot to provide an efficient 
+and flexible interface to the GitHub Developer REST API. A tree-based data
+structure stores the followers and stargazers for any GitHubId up to 3 levels
+deep. Test-Driven Development with JUnit and Java Code Coverage works to attain
+code coverage of 36% for github-services and code coverage of 92% for all data
+structures. With modular and extensible classes, github-services aims to 
+exceed code chalenge requirements. 
+
+
+To Build
+
+mvn clean install test
+
+Java Code Coverage shows reports under target/site/jacoco/index.html
+
+
+To Run
+
+java -Xss100M -jar target/github-services-0.1.0.jar
+
+Test the below GET endpoints using Postman or Curl 
+http://127.0.0.1:8093/github/followers/{GitHubId}
+http://127.0.0.1:8093/github/stargazers/{GitHubId}
+
+GitHubId test cases include "taylorotwell" and "torvalds"
+
+
+Known Issue List
+
+GitHubId values might display more than once.
